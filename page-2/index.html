@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vapor Store - Cyberpunk 2077</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">VAPOR</div>
+            <nav>
+                <a href="index.html">Store</a>
+                <a href="#">Library</a>
+                <a href="#">Community</a>
+                <a href="#">Profile</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="storeSearch" placeholder="Search..." onkeyup="searchGames()">
+                <div id="searchResults" class="search-dropdown"></div>
+            </div>
+        </div>
+    </header>
+    <main class="game-page-container">
+        <h1>Cyberpunk 2077</h1>
+        <div class="media-layout">
+            <div class="video-container">
+                <video controls autoplay muted>
+                    <source src="Cyberpunk 2077 trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="side-panel">
+                <img src="cyberpunk 2077.jpg" alt="Cyberpunk 2077">
+                <p>An open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification.</p>
+                <div class="purchase-box">
+                    <span class="price">$59.99</span>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
