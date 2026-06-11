@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vapor Store - Forza Horizon 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">VAPOR</div>
+            <nav>
+                <a href="index.html">Store</a>
+                <a href="#">Library</a>
+                <a href="#">Community</a>
+                <a href="#">Profile</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="storeSearch" placeholder="Search..." onkeyup="searchGames()">
+                <div id="searchResults" class="search-dropdown"></div>
+            </div>
+        </div>
+    </header>
+    <main class="game-page-container">
+        <h1>Forza Horizon 5</h1>
+        <div class="media-layout">
+            <div class="video-container">
+                <video controls autoplay muted>
+                    <source src="forza horizon 5 trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="side-panel">
+                <img src="forza horizons.avif" alt="Forza Horizon 5">
+                <p>Your ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open world landscapes of Mexico with limitless, fun driving action.</p>
+                <div class="purchase-box">
+                    <span class="price">$29.99</span>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
