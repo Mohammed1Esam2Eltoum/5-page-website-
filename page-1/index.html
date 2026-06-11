@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vapor Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'">VAPOR</div>
+            <nav>
+                <a href="index.html" class="active">Store</a>
+                <a href="#">Library</a>
+                <a href="#">Community</a>
+                <a href="#">Profile</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="storeSearch" placeholder="Search..." onkeyup="searchGames()">
+                <div id="searchResults" class="search-dropdown"></div>
+            </div>
+        </div>
+    </header>
+    <section class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), #1b2838), url('cyberpunk 2077.jpg');" onclick="window.location.href='index2.html'">
+        <div class="hero-content">
+            <span class="tag">FEATURED</span>
+            <h1>Cyberpunk 2077</h1>
+            <p>Dive into the ultimate neon-lit dystopian cyber-RPG. Available now with updated next-gen features.</p>
+            <div class="price-row">
+                <span class="price">$59.99</span>
+                <button class="btn-buy">View Details</button>
+            </div>
+        </div>
+    </section>
+    <main class="store-container">
+        <h2>Trending Games</h2>
+        <div class="game-grid">
+            <div class="game-card" onclick="window.location.href='index3.html'">
+                <img src="hollow knight.jpg" alt="Hollow Knight" class="card-img">
+                <div class="card-info">
+                    <h3>Hollow Knight</h3>
+                    <div class="card-footer">
+                        <span class="discount">-50%</span>
+                        <span class="price">$14.99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-card" onclick="window.location.href='index4.html'">
+                <img src="apex legends.jpg" alt="Apex Legends" class="card-img">
+                <div class="card-info">
+                    <h3>Apex legends</h3>
+                    <div class="card-footer">
+                        <span class="price">Free to Play</span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-card" onclick="window.location.href='index5.html'">
+                <img src="forza horizons.avif" alt="Forza Horizon 5" class="card-img">
+                <div class="card-info">
+                    <h3>Forza horizon 5</h3>
+                    <div class="card-footer">
+                        <span class="price">$29.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
