@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vapor Store - Apex Legends</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">VAPOR</div>
+            <nav>
+                <a href="index.html">Store</a>
+                <a href="#">Library</a>
+                <a href="#">Community</a>
+                <a href="#">Profile</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="storeSearch" placeholder="Search..." onkeyup="searchGames()">
+                <div id="searchResults" class="search-dropdown"></div>
+            </div>
+        </div>
+    </header>
+    <main class="game-page-container">
+        <h1>Apex Legends</h1>
+        <div class="media-layout">
+            <div class="video-container">
+                <video controls autoplay muted>
+                    <source src="apex legends trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="side-panel">
+                <img src="apex legends.jpg" alt="Apex Legends">
+                <p>Master an ever-growing roster of legendary characters with powerful abilities and experience strategic squad play in this intense Battle Royale.</p>
+                <div class="purchase-box">
+                    <span class="price">Free to Play</span>
+                    <button class="btn-buy">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
