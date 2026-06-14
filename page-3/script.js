@@ -4,26 +4,37 @@ const gamesDatabase = [
     { title: "Apex Legends", url: "index4.html" },
     { title: "Forza Horizon 5", url: "index5.html" }
 ];
-
 function searchGames() {
-    const input = document.getElementById("storeSearch").value.toLowerCase();
-    const resultBox = document.getElementById("searchResults");
-    resultBox.innerHTML = "";
-    if (!input) {
-        resultBox.style.display = "none";
+    const searchInput = document.getElementById("storeSearch").value;
+    const cleanQuery = searchInput.toLowerCase();
+    const dropdown = document.getElementById("searchResults");
+    if (cleanQuery === "") {
+        dropdown.style.display = "none";
         return;
     }
-    const filtered = gamesDatabase.filter(g => g.title.toLowerCase().includes(input));
-    if (filtered.length > 0) {
-        filtered.forEach(game => {
-            const div = document.createElement("div");
-            div.className = "search-item";
-            div.innerText = game.title;
-            div.onclick = () => window.location.href = game.url;
-            resultBox.appendChild(div);
+    dropdown.innerHTML = "";
+    const filteredGames = gamesDatabase.filter(game => 
+        game.title.toLowerCase().includes(cleanQuery)
+    );
+    if (filteredGames.length > 0) {
+        dropdown.style.display = "block";
+        filteredGames.forEach(game => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "search-item";
+            itemDiv.innerText = game.title;
+            itemDiv.onclick = () => {
+                window.location.href = game.url;
+            };
+            dropdown.appendChild(itemDiv);
         });
-        resultBox.style.display = "block";
     } else {
-        resultBox.style.display = "none";
+        dropdown.style.display = "none";
     }
 }
+document.addEventListener("click", function(e) {
+    const dropdown = document.getElementById("searchResults");
+    const searchBar = document.getElementById("storeSearch");
+    if (e.target !== searchBar && e.target !== dropdown) {
+        dropdown.style.display = "none";
+    }
+});
