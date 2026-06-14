@@ -1,328 +1,272 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background-color: #1b2838;
     color: #c7d5e0;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
-
 header {
     background-color: #171a21;
-    padding: 15px 5%;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
-
 .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
-
 .logo {
-    color: #fff;
-    font-family: 'Orbitron', sans-serif;
+    color: #00f0ff;
     font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 3px;
+    font-weight: bold;
+    letter-spacing: 2px;
     cursor: pointer;
-    text-transform: uppercase;
     animation: vaporGlow 3s infinite alternate;
 }
-
 @keyframes vaporGlow {
     0% {
-        text-shadow: 0 0 4px rgba(102, 192, 244, 0.2), 0 0 10px rgba(102, 192, 244, 0.2);
+        text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
     }
     100% {
-        text-shadow: 0 0 8px rgba(102, 192, 244, 0.8), 0 0 20px rgba(102, 192, 244, 0.6), 0 0 30px rgba(102, 192, 244, 0.4);
-        color: #66c0f4;
+        text-shadow: 0 0 20px rgba(0, 240, 255, 1), 0 0 30px rgba(0, 240, 255, 0.8);
     }
 }
-
+nav {
+    display: flex;
+    gap: 30px;
+}
 nav a {
     color: #b8b6b4;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
     text-decoration: none;
-    margin: 0 15px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: color 0.2s ease;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
-
 nav a:hover, nav a.active {
-    color: #66c0f4;
+    color: #00f0ff;
+    border-bottom: 2px solid #00f0ff;
 }
-
-.search-bar { 
-    position: relative; 
+.search-bar {
+    position: relative;
+    width: 250px;
 }
-
 .search-bar input {
-    background-color: #2a475e;
-    border: 1px solid #1b2838;
-    padding: 8px 15px;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #316282;
+    border: 1px solid #101822;
     border-radius: 4px;
     color: #fff;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
     outline: none;
-    transition: border 0.2s ease;
 }
-
-.search-bar input:focus {
-    border-color: #66c0f4;
+.search-bar input::placeholder {
+    color: #b8b6b4;
 }
-
 .search-dropdown {
-    position: absolute; 
-    top: 45px; 
-    left: 0; 
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    background-color: #171a21; 
+    background-color: #171a21;
     border: 1px solid #316282;
-    border-radius: 4px; 
-    display: none; 
-    z-index: 500;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 250px;
+    overflow-y: auto;
+    display: none;
+    z-index: 200;
 }
-
-.search-item { 
-    padding: 12px; 
-    color: #c7d5e0; 
-    font-weight: 600;
-    cursor: pointer; 
+.search-item {
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
 }
-
-.search-item:hover { 
-    background-color: #316282; 
-    color: #fff; 
+.search-item:hover {
+    background-color: #316282;
+    color: #00f0ff;
 }
-
 .hero-section {
+    height: 450px;
     background-size: cover;
     background-position: center;
-    height: 550px;
     display: flex;
     align-items: flex-end;
-    padding: 0 10% 60px 10%;
+    padding: 60px;
     cursor: pointer;
+    position: relative;
 }
-
 .hero-content {
-    max-width: 650px;
-    background: rgba(23, 26, 33, 0.85);
-    padding: 30px;
-    border-radius: 8px;
-    border-left: 4px solid #66c0f4;
-    backdrop-filter: blur(5px);
+    max-width: 600px;
+    z-index: 2;
 }
-
-.hero-content .tag {
-    color: #66c0f4;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    display: inline-block;
-    margin-bottom: 5px;
+.tag {
+    background-color: #00f0ff;
+    color: #171a21;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 3px;
 }
-
 .hero-content h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 46px;
-    font-weight: 900;
+    font-size: 48px;
     color: #fff;
-    margin: 5px 0 15px 0;
-    letter-spacing: 1px;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
-
 .hero-content p {
-    margin-bottom: 25px;
-    color: #acb2b8;
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 500;
+    color: #c7d5e0;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
-
 .price-row {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-
-.price {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
+.store-container, .game-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
-
-.btn-buy {
-    background: linear-gradient(90deg, #a4d007, #588a1b);
+h2 {
     color: #fff;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.btn-buy:hover {
-    filter: brightness(1.1);
-    transform: translateY(-1px);
-}
-
-.store-container {
-    padding: 50px 10%;
-}
-
-.store-container h2 {
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: 30px;
-    color: #fff;
-    font-weight: 700;
     letter-spacing: 1px;
 }
-
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
-    align-items: stretch; 
 }
-
 .game-card {
     background-color: #16202d;
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    display: flex;
-    flex-direction: column; 
-    height: 100%; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.2);
 }
-
 .game-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.15);
+    border-color: #00f0ff;
 }
-
 .card-img {
     width: 100%;
-    height: 160px; 
-    object-fit: cover; 
-    display: block;
+    height: 200px;
+    object-fit: cover;
 }
-
 .card-info {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1; 
 }
-
 .card-info h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
     color: #fff;
-    letter-spacing: 0.5px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
-
 .card-footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 12px;
-    margin-top: 15px;
+    gap: 10px;
 }
-
 .discount {
     background-color: #4c6b22;
     color: #a4d007;
-    font-family: 'Orbitron', sans-serif;
-    padding: 3px 6px;
-    font-weight: 700;
-    border-radius: 3px;
-    font-size: 14px;
+    padding: 4px 8px;
+    font-weight: bold;
+    border-radius: 2px;
 }
-
-.game-page-container { 
-    padding: 50px 10%; 
+.price {
+    color: #66c0f4;
+    font-weight: bold;
+    font-size: 18px;
 }
-
-.game-page-container h1 { 
-    color: #fff; 
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 900; 
-    font-size: 42px;
-    margin-bottom: 30px; 
-    letter-spacing: 1px;
+.btn-buy {
+    background: linear-gradient(to right, #a4d007, #799a05);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
-
-.media-layout { 
-    display: flex; 
-    gap: 45px; 
+.btn-buy:hover {
+    background: linear-gradient(to right, #b5e61d, #8eb506);
 }
-
-.video-container { 
-    flex: 2; 
-    background-color: #000; 
-    display: flex; 
-    align-items: center; 
-    border-radius: 6px;
+.game-page-container h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.media-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.video-container {
+    flex: 2;
+    background-color: #000;
+    border-radius: 4px;
     overflow: hidden;
+    line-height: 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
-
-.video-container video { 
-    width: 100%; 
-    height: auto; 
-    display: block; 
+.video-container video {
+    width: 100%;
+    height: auto;
 }
-
-.side-panel { 
-    flex: 1; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 20px; 
-}
-
-.side-panel img { 
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-    border-radius: 6px; 
+.side-panel {
+    flex: 1;
+    background-color: #16202d;
+    padding: 30px;
+    border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
-.side-panel p { 
-    color: #acb2b8; 
-    line-height: 1.6; 
-    font-size: 17px;
-    font-weight: 500;
+.side-panel img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 20px;
 }
-
-.purchase-box { 
-    background-color: #16202d; 
-    padding: 25px; 
-    border-radius: 6px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+.side-panel p {
+    color: #acb2b8;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.purchase-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #101822;
+    padding: 15px 20px;
+    border-radius: 4px;
+}
+@media (max-width: 900px) {
+    .media-layout {
+        flex-direction: column;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-bar {
+        width: 100%;
+    }
 }
